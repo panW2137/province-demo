@@ -1,0 +1,138 @@
+[gd_scene load_steps=3 format=3 uid="uid://bh2kso5fkbflq"]
+
+[ext_resource type="Script" path="res://map/world.gd" id="1_t380h"]
+[ext_resource type="PackedScene" uid="uid://crv21xccbkp0u" path="res://province/province.tscn" id="2_hejrw"]
+
+[node name="world" type="Node2D"]
+script = ExtResource("1_t380h")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+anchor_mode = 0
+position_smoothing_enabled = true
+position_smoothing_speed = 10.0
+
+[node name="province list" type="Node2D" parent="."]
+
+[node name="province" parent="province list" instance=ExtResource("2_hejrw")]
+position = Vector2(32, 32)
+polygon = PackedVector2Array(-32, -32, -32, 32, 0, 16, 32, 16, 64, -32)
+
+[node name="province2" parent="province list" instance=ExtResource("2_hejrw")]
+position = Vector2(40, 88)
+polygon = PackedVector2Array(-40, -24, -40, 40, 48, 40, 32, 8, 24, -40, -8, -40)
+
+[node name="province3" parent="province list" instance=ExtResource("2_hejrw")]
+position = Vector2(40, 168)
+polygon = PackedVector2Array(48, -40, -40, -40, -40, 64, 16, 24, 24, -16)
+
+[node name="province4" parent="province list" instance=ExtResource("2_hejrw")]
+position = Vector2(32, 264)
+polygon = PackedVector2Array(-32, -32, -32, 80, 32, 120, 80, 64, 80, 8, 160, 8, 24, -72)
+
+[node name="province5" parent="province list" instance=ExtResource("2_hejrw")]
+position = Vector2(40, 424)
+polygon = PackedVector2Array(-40, -80, -40, 56, 88, 56, 24, -40)
+
+[node name="province6" parent="province list" instance=ExtResource("2_hejrw")]
+position = Vector2(120, 24)
+polygon = PackedVector2Array(-24, -24, -56, 24, -48, 72, -32, 104, 8, 104, 48, 72, 48, 40, 32, -24)
+
+[node name="province7" parent="province list" instance=ExtResource("2_hejrw")]
+position = Vector2(128, 168)
+polygon = PackedVector2Array(0, -40, -40, -40, -64, -16, -72, 24, 64, 104, 64, 24)
+
+[node name="province8" parent="province list" instance=ExtResource("2_hejrw")]
+position = Vector2(152, 304)
+polygon = PackedVector2Array(40, -32, -40, -32, -40, 24, 40, 24)
+
+[node name="province9" parent="province list" instance=ExtResource("2_hejrw")]
+position = Vector2(144, 384)
+polygon = PackedVector2Array(48, -56, -32, -56, -80, 0, -16, 96, 112, 96, 112, 32, 32, 32)
+
+[node name="province10" parent="province list" instance=ExtResource("2_hejrw")]
+position = Vector2(224, 32)
+polygon = PackedVector2Array(-72, -32, -56, 32, 32, 32, 72, 96, 88, 32, 136, -32)
+
+[node name="province11" parent="province list" instance=ExtResource("2_hejrw")]
+position = Vector2(216, 128)
+polygon = PackedVector2Array(80, 0, 40, -64, -48, -64, -48, -32, -88, 0, -24, 64)
+
+[node name="province12" parent="province list" instance=ExtResource("2_hejrw")]
+position = Vector2(272, 192)
+polygon = PackedVector2Array(24, -64, -80, 0, -80, 80, -80, 136, 48, 128, 112, 32)
+
+[node name="province13" parent="province list" instance=ExtResource("2_hejrw")]
+position = Vector2(272, 368)
+polygon = PackedVector2Array(48, -48, -80, -40, -96, 48, -16, 48)
+
+[node name="province14" parent="province list" instance=ExtResource("2_hejrw")]
+position = Vector2(384, 40)
+polygon = PackedVector2Array(-24, -40, -72, 24, 0, 24, 0, 88, 32, 64, 64, 80, 88, 48, 88, -40)
+
+[node name="province15" parent="province list" instance=ExtResource("2_hejrw")]
+position = Vector2(344, 104)
+polygon = PackedVector2Array(40, 24, 40, -40, -32, -40, -48, 24, 40, 120)
+
+[node name="province16" parent="province list" instance=ExtResource("2_hejrw")]
+position = Vector2(352, 328)
+polygon = PackedVector2Array(32, -104, -32, -8, 32, 56, 96, -8, 96, -72)
+
+[node name="province17" parent="province list" instance=ExtResource("2_hejrw")]
+position = Vector2(328, 400)
+polygon = PackedVector2Array(56, -16, -8, -80, -72, 16, -72, 80, -8, 80, 56, 48)
+
+[node name="province18" parent="province list" instance=ExtResource("2_hejrw")]
+position = Vector2(528, 32)
+polygon = PackedVector2Array(-56, -32, -56, 56, 16, 56, 64, 8, 64, -32)
+
+[node name="province19" parent="province list" instance=ExtResource("2_hejrw")]
+position = Vector2(440, 168)
+polygon = PackedVector2Array(8, -48, -24, -64, -56, -40, -56, 56, 8, 88, 136, 24)
+
+[node name="province20" parent="province list" instance=ExtResource("2_hejrw")]
+position = Vector2(496, 288)
+polygon = PackedVector2Array(80, -96, -48, -32, -48, 32, 0, 80, 56, 16)
+
+[node name="province21" parent="province list" instance=ExtResource("2_hejrw")]
+position = Vector2(440, 400)
+polygon = PackedVector2Array(56, -32, 8, -80, -56, -16, -56, 48, -120, 80, 104, 80)
+
+[node name="province22" parent="province list" instance=ExtResource("2_hejrw")]
+position = Vector2(640, 24)
+polygon = PackedVector2Array(-48, -24, -48, 16, -96, 64, 64, 8, 112, 32, 160, -24)
+
+[node name="province23" parent="province list" instance=ExtResource("2_hejrw")]
+position = Vector2(560, 120)
+polygon = PackedVector2Array(-16, -32, -88, -32, -112, 0, 16, 72, 80, 8)
+
+[node name="province24" parent="province list" instance=ExtResource("2_hejrw")]
+position = Vector2(608, 216)
+polygon = PackedVector2Array(32, -88, -32, -24, -32, 40, 72, 24, 120, -48)
+
+[node name="province25" parent="province list" instance=ExtResource("2_hejrw")]
+position = Vector2(600, 304)
+polygon = PackedVector2Array(-24, -48, -24, -112, -48, 0, -104, 64, -24, 80, 104, 16, 80, -64)
+
+[node name="province26" parent="province list" instance=ExtResource("2_hejrw")]
+position = Vector2(584, 424)
+polygon = PackedVector2Array(-8, -40, -88, -56, -40, 56, 56, 56, 120, -40)
+
+[node name="province27" parent="province list" instance=ExtResource("2_hejrw")]
+position = Vector2(760, 88)
+polygon = PackedVector2Array(40, -88, -8, -32, -56, -56, -32, 80, 40, 40)
+
+[node name="province28" parent="province list" instance=ExtResource("2_hejrw")]
+position = Vector2(672, 96)
+polygon = PackedVector2Array(56, 72, 32, -64, -128, -8, -32, 32)
+
+[node name="province29" parent="province list" instance=ExtResource("2_hejrw")]
+position = Vector2(752, 200)
+polygon = PackedVector2Array(48, -72, -24, -32, -72, 40, -48, 120, 48, 120)
+
+[node name="province30" parent="province list" instance=ExtResource("2_hejrw")]
+position = Vector2(720, 352)
+polygon = PackedVector2Array(-16, -32, -144, 32, -16, 32, 80, 32, 80, -32)
+
+[node name="province31" parent="province list" instance=ExtResource("2_hejrw")]
+position = Vector2(736, 432)
+polygon = PackedVector2Array(64, -48, -32, -48, -96, 48, 64, 48)
