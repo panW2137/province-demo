@@ -6,6 +6,7 @@ class_name Province
 @onready var border = $border
 @onready var idText = $id
 @onready var animation = $AnimationPlayer
+@onready var navMesh = $NavigationRegion2D
 
 var id:int = 0
 var neighbours:Array[int]
@@ -15,8 +16,17 @@ signal mouseExited(index)
 signal mouseClicked(index)
 
 func _ready():
+	#collision
 	colPolygon.polygon = polygon
 	
+	#navigation
+	#var navMeshPolygon:NavigationPolygon = NavigationPolygon.new()
+	#var outline = polygon
+	#navMeshPolygon.add_outline(outline)
+	#navMeshPolygon.make_polygons_from_outlines()
+	#navMesh.navigation_polygon = navMeshPolygon
+	
+	#border
 	#idk why it doesn't work wihout this
 	var borderPoints:PackedVector2Array = polygon
 	borderPoints.push_back(polygon[0])
@@ -26,6 +36,20 @@ func _ready():
 func giveId(newId:int):
 	id = newId
 	idText.text = str(newId)
+	
+func connectToNeighbours(allProvinces:Array):
+	for i in neighbours:
+		var nei = allProvinces[i]
+		var line:Line2D = Line2D.new()
+		var link:NavigationLink2D = NavigationLink2D.new()
+		
+		line.add_point(Vector2.ZERO)
+		line.width = 1
+		line.default_color = Color(1,0,0)
+		link.end_position = nei.global_position - global_position
+		line.add_point(link.end_position)
+		add_child(link)
+		add_child(line)
 
 func findNeighbours(allProvinces:Array):
 	#for every province
@@ -67,6 +91,8 @@ func _on_hitbox_input_event(_viewport, event, _shape_idx):
 	if event is InputEventMouseButton:
 		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
 			emit_signal("mouseClicked",id)
+			Globals.selectedProvinceId = id
+			Globals.selectedProvincePosition = global_position
 
 func highlight():
 	color = Color(0.5,0.5,1)

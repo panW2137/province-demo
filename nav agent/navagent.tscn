@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=3 uid="uid://bwukqx0uo75w6"]
+
+[ext_resource type="Script" path="res://nav agent/navagent.gd" id="1_uo6uv"]
+
+[node name="navagent" type="CharacterBody2D"]
+script = ExtResource("1_uo6uv")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -16.0
+offset_top = -16.0
+offset_right = 16.0
+offset_bottom = 16.0
+
+[connection signal="link_reached" from="NavigationAgent2D" to="." method="_on_navigation_agent_2d_link_reached"]

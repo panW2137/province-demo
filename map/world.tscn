@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://bh2kso5fkbflq"]
+[gd_scene load_steps=4 format=3 uid="uid://bh2kso5fkbflq"]
 
 [ext_resource type="Script" path="res://map/world.gd" id="1_t380h"]
 [ext_resource type="PackedScene" uid="uid://crv21xccbkp0u" path="res://province/province.tscn" id="2_hejrw"]
+[ext_resource type="PackedScene" uid="uid://bwukqx0uo75w6" path="res://nav agent/navagent.tscn" id="3_y70bn"]
 
 [node name="world" type="Node2D"]
 script = ExtResource("1_t380h")
@@ -136,3 +137,6 @@ polygon = PackedVector2Array(-16, -32, -144, 32, -16, 32, 80, 32, 80, -32)
 [node name="province31" parent="province list" instance=ExtResource("2_hejrw")]
 position = Vector2(736, 432)
 polygon = PackedVector2Array(64, -48, -32, -48, -96, 48, 64, 48)
+
+[node name="navagent" parent="." instance=ExtResource("3_y70bn")]
+position = Vector2(32, 32)
